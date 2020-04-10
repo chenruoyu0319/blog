@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Kubernetes 中使用 Helm 部署应用 | HelloWood</title>
+    <meta name="description" content="There is path to everyone">
+    <link rel="icon" href="/blog/favicon.ico">
+    
+    <link rel="preload" href="/blog/assets/css/0.styles.ad3369ca.css" as="style"><link rel="preload" href="/blog/assets/js/app.c3b8d897.js" as="script"><link rel="preload" href="/blog/assets/js/50.b7711518.js" as="script"><link rel="prefetch" href="/blog/assets/js/10.da86b7bd.js"><link rel="prefetch" href="/blog/assets/js/100.1fda9c7b.js"><link rel="prefetch" href="/blog/assets/js/101.d6e48f6b.js"><link rel="prefetch" href="/blog/assets/js/102.bba9eb7e.js"><link rel="prefetch" href="/blog/assets/js/103.9130ca26.js"><link rel="prefetch" href="/blog/assets/js/104.17feb6c0.js"><link rel="prefetch" href="/blog/assets/js/105.2d88b9c6.js"><link rel="prefetch" href="/blog/assets/js/106.60aab3d6.js"><link rel="prefetch" href="/blog/assets/js/107.0b445758.js"><link rel="prefetch" href="/blog/assets/js/108.24b24aee.js"><link rel="prefetch" href="/blog/assets/js/109.e2dfc393.js"><link rel="prefetch" href="/blog/assets/js/11.a9db4537.js"><link rel="prefetch" href="/blog/assets/js/110.5e99609b.js"><link rel="prefetch" href="/blog/assets/js/111.1d728c12.js"><link rel="prefetch" href="/blog/assets/js/112.0dc96157.js"><link rel="prefetch" href="/blog/assets/js/113.2dd7f283.js"><link rel="prefetch" href="/blog/assets/js/114.592ea6c3.js"><link rel="prefetch" href="/blog/assets/js/115.02255f30.js"><link rel="prefetch" href="/blog/assets/js/116.ef5309f5.js"><link rel="prefetch" href="/blog/assets/js/117.c34f674b.js"><link rel="prefetch" href="/blog/assets/js/118.54f8bd90.js"><link rel="prefetch" href="/blog/assets/js/119.61245eae.js"><link rel="prefetch" href="/blog/assets/js/12.8583d81f.js"><link rel="prefetch" href="/blog/assets/js/120.a434adb5.js"><link rel="prefetch" href="/blog/assets/js/121.fc914209.js"><link rel="prefetch" href="/blog/assets/js/122.20dc77aa.js"><link rel="prefetch" href="/blog/assets/js/13.9ae3b3e9.js"><link rel="prefetch" href="/blog/assets/js/14.11ff3f38.js"><link rel="prefetch" href="/blog/assets/js/15.688067b9.js"><link rel="prefetch" href="/blog/assets/js/16.427cec0a.js"><link rel="prefetch" href="/blog/assets/js/17.98f70d8f.js"><link rel="prefetch" href="/blog/assets/js/18.b4ab36f9.js"><link rel="prefetch" href="/blog/assets/js/19.7e0b8dc9.js"><link rel="prefetch" href="/blog/assets/js/2.8cfd1be3.js"><link rel="prefetch" href="/blog/assets/js/20.adf7d5c8.js"><link rel="prefetch" href="/blog/assets/js/21.bb9eafed.js"><link rel="prefetch" href="/blog/assets/js/22.5ed2a178.js"><link rel="prefetch" href="/blog/assets/js/23.99d24170.js"><link rel="prefetch" href="/blog/assets/js/24.bc475600.js"><link rel="prefetch" href="/blog/assets/js/25.e457e40c.js"><link rel="prefetch" href="/blog/assets/js/26.b4236411.js"><link rel="prefetch" href="/blog/assets/js/27.cc233ffc.js"><link rel="prefetch" href="/blog/assets/js/28.88e37db5.js"><link rel="prefetch" href="/blog/assets/js/29.d8334253.js"><link rel="prefetch" href="/blog/assets/js/3.85eafc6e.js"><link rel="prefetch" href="/blog/assets/js/30.036a6581.js"><link rel="prefetch" href="/blog/assets/js/31.39636870.js"><link rel="prefetch" href="/blog/assets/js/32.4f1b9fe5.js"><link rel="prefetch" href="/blog/assets/js/33.f5fccb87.js"><link rel="prefetch" href="/blog/assets/js/34.8f223cf7.js"><link rel="prefetch" href="/blog/assets/js/35.2eb95af5.js"><link rel="prefetch" href="/blog/assets/js/36.bb3a4c24.js"><link rel="prefetch" href="/blog/assets/js/37.37386f66.js"><link rel="prefetch" href="/blog/assets/js/38.148c6dd1.js"><link rel="prefetch" href="/blog/assets/js/39.7e86da97.js"><link rel="prefetch" href="/blog/assets/js/4.25bf5105.js"><link rel="prefetch" href="/blog/assets/js/40.f7d3b58a.js"><link rel="prefetch" href="/blog/assets/js/41.410d464b.js"><link rel="prefetch" href="/blog/assets/js/42.3605393d.js"><link rel="prefetch" href="/blog/assets/js/43.5de0724c.js"><link rel="prefetch" href="/blog/assets/js/44.23f62410.js"><link rel="prefetch" href="/blog/assets/js/45.be9ef252.js"><link rel="prefetch" href="/blog/assets/js/46.c12425b6.js"><link rel="prefetch" href="/blog/assets/js/47.ce3ec49d.js"><link rel="prefetch" href="/blog/assets/js/48.e952f7c9.js"><link rel="prefetch" href="/blog/assets/js/49.54ff7f6f.js"><link rel="prefetch" href="/blog/assets/js/5.63c626c0.js"><link rel="prefetch" href="/blog/assets/js/51.03a13657.js"><link rel="prefetch" href="/blog/assets/js/52.3892d45c.js"><link rel="prefetch" href="/blog/assets/js/53.81de0db8.js"><link rel="prefetch" href="/blog/assets/js/54.cd38387d.js"><link rel="prefetch" href="/blog/assets/js/55.8d91faa8.js"><link rel="prefetch" href="/blog/assets/js/56.4eec9a52.js"><link rel="prefetch" href="/blog/assets/js/57.f71bbce3.js"><link rel="prefetch" href="/blog/assets/js/58.95eddb54.js"><link rel="prefetch" href="/blog/assets/js/59.16df2f6b.js"><link rel="prefetch" href="/blog/assets/js/6.3cf64e25.js"><link rel="prefetch" href="/blog/assets/js/60.2429cfb7.js"><link rel="prefetch" href="/blog/assets/js/61.14655cd6.js"><link rel="prefetch" href="/blog/assets/js/62.9c2b33ad.js"><link rel="prefetch" href="/blog/assets/js/63.2d91c668.js"><link rel="prefetch" href="/blog/assets/js/64.f4834597.js"><link rel="prefetch" href="/blog/assets/js/65.d11a02e4.js"><link rel="prefetch" href="/blog/assets/js/66.4326ba51.js"><link rel="prefetch" href="/blog/assets/js/67.cb1dc555.js"><link rel="prefetch" href="/blog/assets/js/68.a83dc049.js"><link rel="prefetch" href="/blog/assets/js/69.d1f07348.js"><link rel="prefetch" href="/blog/assets/js/7.9cbb0d6f.js"><link rel="prefetch" href="/blog/assets/js/70.f96025df.js"><link rel="prefetch" href="/blog/assets/js/71.af522fcf.js"><link rel="prefetch" href="/blog/assets/js/72.9ec2197b.js"><link rel="prefetch" href="/blog/assets/js/73.95bc1d2c.js"><link rel="prefetch" href="/blog/assets/js/74.8bdf0ff5.js"><link rel="prefetch" href="/blog/assets/js/75.adfb40ef.js"><link rel="prefetch" href="/blog/assets/js/76.1e88405d.js"><link rel="prefetch" href="/blog/assets/js/77.32a459de.js"><link rel="prefetch" href="/blog/assets/js/78.05684469.js"><link rel="prefetch" href="/blog/assets/js/79.6eb82fa7.js"><link rel="prefetch" href="/blog/assets/js/8.a853dfa7.js"><link rel="prefetch" href="/blog/assets/js/80.8d4b06e9.js"><link rel="prefetch" href="/blog/assets/js/81.74e68934.js"><link rel="prefetch" href="/blog/assets/js/82.0497f220.js"><link rel="prefetch" href="/blog/assets/js/83.98a0e98c.js"><link rel="prefetch" href="/blog/assets/js/84.4267a125.js"><link rel="prefetch" href="/blog/assets/js/85.4c9c338e.js"><link rel="prefetch" href="/blog/assets/js/86.7d4985b4.js"><link rel="prefetch" href="/blog/assets/js/87.33c61c72.js"><link rel="prefetch" href="/blog/assets/js/88.49bd3481.js"><link rel="prefetch" href="/blog/assets/js/89.2ceb6118.js"><link rel="prefetch" href="/blog/assets/js/9.b85f95f3.js"><link rel="prefetch" href="/blog/assets/js/90.bfa5d02e.js"><link rel="prefetch" href="/blog/assets/js/91.faa858b0.js"><link rel="prefetch" href="/blog/assets/js/92.5e8f5328.js"><link rel="prefetch" href="/blog/assets/js/93.9100f2a7.js"><link rel="prefetch" href="/blog/assets/js/94.79d7ea18.js"><link rel="prefetch" href="/blog/assets/js/95.60447753.js"><link rel="prefetch" href="/blog/assets/js/96.f0bac547.js"><link rel="prefetch" href="/blog/assets/js/97.fcb5a63e.js"><link rel="prefetch" href="/blog/assets/js/98.fd71af61.js"><link rel="prefetch" href="/blog/assets/js/99.f0ef3ad6.js">
+    <link rel="stylesheet" href="/blog/assets/css/0.styles.ad3369ca.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/blog/" class="home-link router-link-active"><!----> <span class="site-name">HelloWood</span></a> <div class="links" style="max-width:nullpx;"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/blog/blog/" class="nav-link router-link-active">Blog</a></div><div class="nav-item"><a href="/blog/about/" class="nav-link">About</a></div> <a href="https://github.com/helloworlde/" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav></div></header> <div class="sidebar-mask"></div> <div class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/blog/blog/" class="nav-link router-link-active">Blog</a></div><div class="nav-item"><a href="/blog/about/" class="nav-link">About</a></div> <a href="https://github.com/helloworlde/" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav>  <ul class="sidebar-links"><li><div class="sidebar-group first collapsable"><p class="sidebar-heading"><span>Angular</span> <span class="arrow right"></span></p> <!----></div></li><li><div class="sidebar-group collapsable"><p class="sidebar-heading"><span>Docker</span> <span class="arrow right"></span></p> <!----></div></li><li><div class="sidebar-group collapsable"><p class="sidebar-heading"><span>Gauge</span> <span class="arrow right"></span></p> <!----></div></li><li><div class="sidebar-group collapsable"><p class="sidebar-heading"><span>Gradle</span> <span class="arrow right"></span></p> <!----></div></li><li><div class="sidebar-group collapsable"><p class="sidebar-heading"><span>Go</span> <span class="arrow right"></span></p> <!----></div></li><li><div class="sidebar-group collapsable"><p class="sidebar-heading"><span>IDEA</span> <span class="arrow right"></span></p> <!----></div></li><li><div class="sidebar-group collapsable"><p class="sidebar-heading"><span>Java</span> <span class="arrow right"></span></p> <!----></div></li><li><div class="sidebar-group collapsable"><p class="sidebar-heading open"><span>Kubernetes</span> <span class="arrow down"></span></p> <ul class="sidebar-group-items"><li><a href="/blog/blog/Kubernetes/Kubernetes-配置-kubeconfig-访问多个集群.html" class="sidebar-link">Kubernetes 配置 kubeconfig 访问多个集群</a></li><li><a href="/blog/blog/Kubernetes/Kubernetes-中部署-SpringBoot-应用.html" class="sidebar-link">Kubernetes 中部署 SpringBoot 应用</a></li><li><a href="/blog/blog/Kubernetes/Kubenetes-部署-Dashboard.html" class="sidebar-link">Kubenetes 部署 Dashboard</a></li><li><a href="/blog/blog/Kubernetes/Kubernetes-中安装-Helm.html" class="sidebar-link">Kubernetes 中安装 Helm</a></li><li><a href="/blog/blog/Kubernetes/Kubernetes-中使用-Helm-部署应用.html" class="active sidebar-link">Kubernetes 中使用 Helm 部署应用</a></li><li><a href="/blog/blog/Kubernetes/使用-GitHub-作为-Helm-仓库.html" class="sidebar-link">使用 GitHub 作为 Helm 仓库</a></li><li><a href="/blog/blog/Kubernetes/Kubernetes-中使用-Helm-部署使用-Prometheus.html" class="sidebar-link">Kubernetes 中使用 Helm 部署使用 Prometheus</a></li></ul></div></li><li><div class="sidebar-group collapsable"><p class="sidebar-heading"><span>MQ</span> <span class="arrow right"></span></p> <!----></div></li><li><div class="sidebar-group collapsable"><p class="sidebar-heading"><span>MySQL</span> <span class="arrow right"></span></p> <!----></div></li><li><div class="sidebar-group collapsable"><p class="sidebar-heading"><span>Others</span> <span class="arrow right"></span></p> <!----></div></li><li><div class="sidebar-group collapsable"><p class="sidebar-heading"><span>Seata</span> <span class="arrow right"></span></p> <!----></div></li><li><div class="sidebar-group collapsable"><p class="sidebar-heading"><span>Serverless</span> <span class="arrow right"></span></p> <!----></div></li><li><div class="sidebar-group collapsable"><p class="sidebar-heading"><span>SpringBoot</span> <span class="arrow right"></span></p> <!----></div></li><li><div class="sidebar-group collapsable"><p class="sidebar-heading"><span>SpringCloud</span> <span class="arrow right"></span></p> <!----></div></li><li><div class="sidebar-group collapsable"><p class="sidebar-heading"><span>SpringMVC</span> <span class="arrow right"></span></p> <!----></div></li><li><div class="sidebar-group collapsable"><p class="sidebar-heading"><span>Ubuntu</span> <span class="arrow right"></span></p> <!----></div></li><li><div class="sidebar-group collapsable"><p class="sidebar-heading"><span>Web</span> <span class="arrow right"></span></p> <!----></div></li><li><div class="sidebar-group collapsable"><p class="sidebar-heading"><span>Windows</span> <span class="arrow right"></span></p> <!----></div></li><li><div class="sidebar-group collapsable"><p class="sidebar-heading"><span>RaspBerryPi</span> <span class="arrow right"></span></p> <!----></div></li></ul> </div> <div class="page"> <div class="content"><h1 id="kubernetes-中使用-helm-部署应用"><a href="#kubernetes-中使用-helm-部署应用" aria-hidden="true" class="header-anchor">#</a> Kubernetes 中使用 Helm 部署应用</h1> <h2 id="创建应用"><a href="#创建应用" aria-hidden="true" class="header-anchor">#</a> 创建应用</h2> <p>创建一个简单的应用，提供一个 REST 接口；使用 Golang 编写，然后将镜像 push 到 Docker Hub</p> <ul><li>go.mod</li></ul> <div class="language-go extra-class"><pre class="language-go"><code>module github<span class="token punctuation">.</span>com<span class="token operator">/</span>helloworlde<span class="token operator">/</span>rest
+
+<span class="token keyword">go</span> <span class="token number">1.12</span>
+</code></pre></div><ul><li>main.go</li></ul> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+	<span class="token string">&quot;fmt&quot;</span>
+	<span class="token string">&quot;log&quot;</span>
+	<span class="token string">&quot;net/http&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	http<span class="token punctuation">.</span><span class="token function">HandleFunc</span><span class="token punctuation">(</span><span class="token string">&quot;/ping&quot;</span><span class="token punctuation">,</span> <span class="token keyword">func</span><span class="token punctuation">(</span>writer http<span class="token punctuation">.</span>ResponseWriter<span class="token punctuation">,</span> request <span class="token operator">*</span>http<span class="token punctuation">.</span>Request<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">&quot;Pong&quot;</span><span class="token punctuation">)</span>
+		<span class="token boolean">_</span><span class="token punctuation">,</span> <span class="token boolean">_</span> <span class="token operator">=</span> fmt<span class="token punctuation">.</span><span class="token function">Fprint</span><span class="token punctuation">(</span>writer<span class="token punctuation">,</span> <span class="token string">&quot;Pong&quot;</span><span class="token punctuation">)</span>
+	<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">&quot;Server Started&quot;</span><span class="token punctuation">)</span>
+	log<span class="token punctuation">.</span><span class="token function">Fatal</span><span class="token punctuation">(</span>http<span class="token punctuation">.</span><span class="token function">ListenAndServe</span><span class="token punctuation">(</span><span class="token string">&quot;:8080&quot;</span><span class="token punctuation">,</span> <span class="token boolean">nil</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><ul><li>Dockerfile</li></ul> <div class="language-dockerfile extra-class"><pre class="language-text"><code>FROM golang AS build-env
+WORKDIR /go/src/github.com/hellowrolde/rest
+COPY . .
+
+ENV GO111MODULE on
+ENV GOPROXY=https://gocenter.io
+ENV GOOS linux
+ENV GOARCH 386
+
+RUN go mod download
+RUN go build -v -o /go/src/github.com/hellowrolde/rest/app
+
+FROM alpine
+COPY --from=build-env  /go/src/github.com/hellowrolde/rest/app /usr/local/bin/app
+RUN ln -sf /usr/share/zoneinfo/Asia/Shanghai  /etc/localtime
+EXPOSE 8080
+CMD [&quot;app&quot;]
+</code></pre></div><ul><li>构建并 push 镜像</li></ul> <div class="language-bash extra-class"><pre class="language-bash"><code>docker build -t hellowooeds/rest <span class="token keyword">.</span> 
+docker push hellowooeds/rest
+</code></pre></div><h2 id="使用-helm"><a href="#使用-helm" aria-hidden="true" class="header-anchor">#</a> 使用 Helm</h2> <h3 id="添加-helm"><a href="#添加-helm" aria-hidden="true" class="header-anchor">#</a> 添加 Helm</h3> <h4 id="初始化"><a href="#初始化" aria-hidden="true" class="header-anchor">#</a> 初始化</h4> <div class="language-bash extra-class"><pre class="language-bash"><code>helm create rest
+</code></pre></div><p>然后会在项目目录下创建一个 rest 的文件夹，里面包含所需要的 Helm 配置文件</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token keyword">.</span>
+├── Chart.yaml
+├── charts
+├── templates
+│   ├── NOTES.txt
+│   ├── _helpers.tpl
+│   ├── deployment.yaml
+│   ├── ingress.yaml
+│   ├── service.yaml
+│   └── tests
+│       └── test-connection.yaml
+└── values.yaml
+
+3 directories, 8 files
+</code></pre></div><ul><li>Chart.yaml: 用于描述 Chart 的属性</li> <li>values.yaml: 存放项目的配置项，如镜像名称或者 tag 等，用于和模板组装</li> <li>charts: 用于存放依赖的 chart 的，当有依赖需要管理时，可以添加 requirements.yaml 文件，可用于管理项目内或者外部的依赖</li> <li>templates: 用于存放需要的配置模板</li></ul> <h4 id="修改配置文件"><a href="#修改配置文件" aria-hidden="true" class="header-anchor">#</a> 修改配置文件</h4> <ul><li>Chart.yaml</li></ul> <div class="language-yaml extra-class"><pre class="language-yaml"><code><span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> v1
+<span class="token key atrule">appVersion</span><span class="token punctuation">:</span> <span class="token string">&quot;1.0&quot;</span>
+<span class="token key atrule">description</span><span class="token punctuation">:</span> Rest application with Helm
+<span class="token key atrule">name</span><span class="token punctuation">:</span> rest
+<span class="token key atrule">version</span><span class="token punctuation">:</span> 0.1.0
+<span class="token key atrule">maintainers</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> HelloWood
+</code></pre></div><ul><li>修改 values.yaml</li></ul> <div class="language-yaml extra-class"><pre class="language-yaml"><code><span class="token key atrule">backend</span><span class="token punctuation">:</span>
+  <span class="token key atrule">image</span><span class="token punctuation">:</span> hellowoodes/rest
+  <span class="token key atrule">tag</span><span class="token punctuation">:</span> <span class="token string">&quot;latest&quot;</span>
+  <span class="token key atrule">pullPolicy</span><span class="token punctuation">:</span> IfNotPresent
+  <span class="token key atrule">replicas</span><span class="token punctuation">:</span> <span class="token number">1</span>
+
+<span class="token key atrule">namespace</span><span class="token punctuation">:</span> rest
+
+<span class="token key atrule">service</span><span class="token punctuation">:</span>
+  <span class="token key atrule">type</span><span class="token punctuation">:</span> NodePort
+</code></pre></div><ul><li>backend-service.yaml</li></ul> <div class="language-yaml extra-class"><pre class="language-yaml"><code><span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> v1
+<span class="token key atrule">kind</span><span class="token punctuation">:</span> Service
+<span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+  <span class="token key atrule">labels</span><span class="token punctuation">:</span>
+    <span class="token key atrule">app</span><span class="token punctuation">:</span> backend
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> backend
+  <span class="token key atrule">namespace</span><span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token punctuation">{</span> .Values.namespace <span class="token punctuation">}</span><span class="token punctuation">}</span>
+<span class="token key atrule">spec</span><span class="token punctuation">:</span>
+  <span class="token key atrule">ports</span><span class="token punctuation">:</span>
+    <span class="token punctuation">-</span> <span class="token key atrule">protocol</span><span class="token punctuation">:</span> TCP
+      <span class="token key atrule">port</span><span class="token punctuation">:</span> <span class="token number">8080</span>
+      <span class="token key atrule">targetPort</span><span class="token punctuation">:</span> <span class="token number">8080</span>
+  <span class="token key atrule">selector</span><span class="token punctuation">:</span>
+    <span class="token key atrule">app</span><span class="token punctuation">:</span> backend
+  <span class="token key atrule">type</span><span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token punctuation">{</span> .Values.service.type <span class="token punctuation">}</span><span class="token punctuation">}</span>
+</code></pre></div><ul><li>backend-deployment.yaml</li></ul> <div class="language-yaml extra-class"><pre class="language-yaml"><code><span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> extensions/v1beta1
+<span class="token key atrule">kind</span><span class="token punctuation">:</span> Deployment
+<span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+  <span class="token key atrule">labels</span><span class="token punctuation">:</span>
+    <span class="token key atrule">app</span><span class="token punctuation">:</span> backend
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> backend
+  <span class="token key atrule">namespace</span><span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token punctuation">{</span> .Values.namespace <span class="token punctuation">}</span><span class="token punctuation">}</span>
+<span class="token key atrule">spec</span><span class="token punctuation">:</span>
+  <span class="token key atrule">selector</span><span class="token punctuation">:</span>
+    <span class="token key atrule">matchLabels</span><span class="token punctuation">:</span>
+      <span class="token key atrule">app</span><span class="token punctuation">:</span> backend
+  <span class="token key atrule">replicas</span><span class="token punctuation">:</span> <span class="token number">1</span>
+  <span class="token key atrule">template</span><span class="token punctuation">:</span>
+    <span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+      <span class="token key atrule">labels</span><span class="token punctuation">:</span>
+        <span class="token key atrule">app</span><span class="token punctuation">:</span> backend
+    <span class="token key atrule">spec</span><span class="token punctuation">:</span>
+      <span class="token key atrule">containers</span><span class="token punctuation">:</span>
+        <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> backend
+          <span class="token key atrule">image</span><span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token punctuation">{</span> .Values.backend.image <span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">:</span><span class="token punctuation">{</span><span class="token punctuation">{</span> .Values.backend.tag <span class="token punctuation">}</span><span class="token punctuation">}</span>
+          <span class="token key atrule">imagePullPolicy</span><span class="token punctuation">:</span> IfNotPresent
+          <span class="token key atrule">ports</span><span class="token punctuation">:</span>
+            <span class="token punctuation">-</span> <span class="token key atrule">containerPort</span><span class="token punctuation">:</span> <span class="token number">8080</span>
+</code></pre></div><h3 id="安装应用"><a href="#安装应用" aria-hidden="true" class="header-anchor">#</a> 安装应用</h3> <div class="language-bash extra-class"><pre class="language-bash"><code>helm <span class="token function">install</span> ./rest --name rest
+</code></pre></div><p>如果不指定名称，会随机生成一个</p> <div class="language-bash extra-class"><pre class="language-bash"><code>NAME:   rest
+LAST DEPLOYED: Sun Jul 14 18:50:16 2019
+NAMESPACE: default
+STATUS: DEPLOYED
+
+RESOURCES:
+<span class="token operator">==</span><span class="token operator">&gt;</span> v1/Pod<span class="token punctuation">(</span>related<span class="token punctuation">)</span>
+NAME                      READY  STATUS             RESTARTS  AGE
+backend-5bc9d6cb99-pfwn5  0/1    ContainerCreating  0         0s
+
+<span class="token operator">==</span><span class="token operator">&gt;</span> v1/Service
+NAME     TYPE      CLUSTER-IP     EXTERNAL-IP  PORT<span class="token punctuation">(</span>S<span class="token punctuation">)</span>         AGE
+backend  NodePort  10.105.41.183  <span class="token operator">&lt;</span>none<span class="token operator">&gt;</span>       8080:31381/TCP  0s
+
+<span class="token operator">==</span><span class="token operator">&gt;</span> v1beta1/Deployment
+NAME     READY  UP-TO-DATE  AVAILABLE  AGE
+backend  0/1    1           0          0s
+
+
+NOTES:
+1. Get the application URL by running these commands:
+  <span class="token function">export</span> NODE_PORT<span class="token operator">=</span><span class="token variable"><span class="token variable">$(</span>kubectl get <span class="token function">service</span> -l app<span class="token operator">=</span>backend --namespace default  -o jsonpath<span class="token operator">=</span><span class="token string">&quot;{.items[0].spec.ports[0].nodePort}&quot;</span><span class="token variable">)</span></span>
+  <span class="token function">export</span> NODE_IP<span class="token operator">=</span><span class="token variable"><span class="token variable">$(</span>kubectl get nodes --namespace default -o jsonpath<span class="token operator">=</span><span class="token string">&quot;{.items[0].status.addresses[0].address}&quot;</span><span class="token variable">)</span></span>
+  <span class="token keyword">echo</span> http://<span class="token variable">$NODE_IP</span><span class="token keyword">:</span><span class="token variable">$NODE_PORT</span>
+</code></pre></div><h4 id="查看"><a href="#查看" aria-hidden="true" class="header-anchor">#</a> 查看</h4> <ul><li>查看 Helm 信息</li></ul> <div class="language-bash extra-class"><pre class="language-bash"><code>helm list
+</code></pre></div><div class="language-bash extra-class"><pre class="language-bash"><code>NAME	REVISION	UPDATED                 	STATUS  	CHART     	APP VERSION	NAMESPACE
+rest	1       	Sun Jul 14 18:55:25 2019	DEPLOYED	rest-0.1.0	1.0        	default
+</code></pre></div><ul><li>查看 Deployment、Service、Pod</li></ul> <div class="language-bash extra-class"><pre class="language-bash"><code>kubectl get all -l app<span class="token operator">=</span>backend
+</code></pre></div><div class="language-bash extra-class"><pre class="language-bash"><code>NAME                           READY   STATUS    RESTARTS   AGE
+pod/backend-5bc9d6cb99-kmpvx   1/1     Running   0          7m15s
+
+NAME                 TYPE        CLUSTER-IP      EXTERNAL-IP   PORT<span class="token punctuation">(</span>S<span class="token punctuation">)</span>          AGE
+service/backend      NodePort    10.104.248.37   <span class="token operator">&lt;</span>none<span class="token operator">&gt;</span>        8080:31064/TCP   7m15s
+
+NAME                      READY   UP-TO-DATE   AVAILABLE   AGE
+deployment.apps/backend   1/1     1            1           7m15s
+
+NAME                                 DESIRED   CURRENT   READY   AGE
+replicaset.apps/backend-5bc9d6cb99   1         1         1       7m15s
+</code></pre></div><h4 id="测试"><a href="#测试" aria-hidden="true" class="header-anchor">#</a> 测试</h4> <p>访问通过 NOTES 获取到的 IP 和端口</p> <div class="language-bash extra-class"><pre class="language-bash"><code>http get http://192.168.0.110:31381/ping
+HTTP/1.1 200 OK
+Content-Length: 4
+Content-Type: text/plain<span class="token punctuation">;</span> charset<span class="token operator">=</span>utf-8
+Date: Sun, 14 Jul 2019 10:53:18 GMT
+
+Pong
+</code></pre></div><h3 id="打包"><a href="#打包" aria-hidden="true" class="header-anchor">#</a> 打包</h3> <div class="language-bash extra-class"><pre class="language-bash"><code>helm package ./rest
+</code></pre></div><div class="language-bash extra-class"><pre class="language-bash"><code>Successfully packaged chart and saved it to: /path/to/project/rest-0.1.0.tgz
+</code></pre></div><h3 id="更新"><a href="#更新" aria-hidden="true" class="header-anchor">#</a> 更新</h3> <p>当应用发生了更新之后，需要升级部署，这时候可以通过修改 Helm 的配置来实现；如镜像版本从1.0 更新到 1.1</p> <ul><li>修改 values.yaml</li></ul> <div class="language-yaml extra-class"><pre class="language-yaml"><code><span class="token key atrule">backend</span><span class="token punctuation">:</span>
+  <span class="token key atrule">image</span><span class="token punctuation">:</span> hellowoodes/rest
+  <span class="token key atrule">tag</span><span class="token punctuation">:</span> <span class="token string">&quot;1.1&quot;</span>
+  <span class="token key atrule">pullPolicy</span><span class="token punctuation">:</span> IfNotPresent
+  <span class="token key atrule">replicas</span><span class="token punctuation">:</span> <span class="token number">1</span>
+
+<span class="token key atrule">namespace</span><span class="token punctuation">:</span> default
+
+<span class="token key atrule">service</span><span class="token punctuation">:</span>
+  <span class="token key atrule">type</span><span class="token punctuation">:</span> NodePort
+</code></pre></div><ul><li>执行更新</li></ul> <div class="language-bash extra-class"><pre class="language-bash"><code> helm upgrade rest ./rest --repo local
+</code></pre></div><div class="language-bash extra-class"><pre class="language-bash"><code>Release <span class="token string">&quot;rest&quot;</span> has been upgraded. Happy Helming<span class="token operator">!</span>
+LAST DEPLOYED: Sun Jul 14 21:03:57 2019
+NAMESPACE: default
+STATUS: DEPLOYED
+
+RESOURCES:
+<span class="token operator">==</span><span class="token operator">&gt;</span> v1/Pod<span class="token punctuation">(</span>related<span class="token punctuation">)</span>
+NAME                     READY  STATUS   RESTARTS  AGE
+backend-56876f876-vvbzz  1/1    Running  0         85s
+
+<span class="token operator">==</span><span class="token operator">&gt;</span> v1/Service
+NAME     TYPE      CLUSTER-IP   EXTERNAL-IP  PORT<span class="token punctuation">(</span>S<span class="token punctuation">)</span>         AGE
+backend  NodePort  10.97.22.28  <span class="token operator">&lt;</span>none<span class="token operator">&gt;</span>       8080:31496/TCP  7m10s
+
+<span class="token operator">==</span><span class="token operator">&gt;</span> v1beta1/Deployment
+NAME     READY  UP-TO-DATE  AVAILABLE  AGE
+backend  1/1    1           1          7m10s
+
+
+NOTES:
+1. Get the application URL by running these commands:
+  <span class="token function">export</span> NODE_PORT<span class="token operator">=</span><span class="token variable"><span class="token variable">$(</span>kubectl get <span class="token function">service</span> -l app<span class="token operator">=</span>backend --namespace default -o jsonpath<span class="token operator">=</span><span class="token string">&quot;{.items[0].spec.ports[0].nodePort}&quot;</span><span class="token variable">)</span></span>
+  <span class="token function">export</span> NODE_IP<span class="token operator">=</span><span class="token variable"><span class="token variable">$(</span>kubectl get nodes --namespace default -o jsonpath<span class="token operator">=</span><span class="token string">&quot;{.items[0].status.addresses[0].address}&quot;</span><span class="token variable">)</span></span>
+  <span class="token keyword">echo</span> http://<span class="token variable">$NODE_IP</span><span class="token keyword">:</span><span class="token variable">$NODE_PORT</span>
+</code></pre></div><p>等待更新完成后，查看 Pod 的描述信息</p> <div class="language-bash extra-class"><pre class="language-bash"><code>kubectl describe pod backend-56876f876-vvbzz
+</code></pre></div><p>可以看到 pod 的镜像已经从 1.0 更新到了 1.1</p> <div class="language-bash extra-class"><pre class="language-bash"><code>Normal  Pulled     29s   kubelet, ubuntu-server  Container image <span class="token string">&quot;hellowoodes/rest:1.1&quot;</span> already present on machine
+</code></pre></div><h3 id><a href="#" aria-hidden="true" class="header-anchor">#</a></h3> <h3 id="删除应用"><a href="#删除应用" aria-hidden="true" class="header-anchor">#</a> 删除应用</h3> <p>删除 Helm 应用后，所有相关的 Service，Deployment，Pod 等都会被删除</p> <div class="language-bash extra-class"><pre class="language-bash"><code>helm delete --purge rest
+</code></pre></div><h3 id="查看-repo-应用"><a href="#查看-repo-应用" aria-hidden="true" class="header-anchor">#</a> 查看 Repo 应用</h3> <div class="language-bash extra-class"><pre class="language-bash"><code>helm serve
+</code></pre></div><div class="language-bash extra-class"><pre class="language-bash"><code>Regenerating index. This may take a moment.
+Now serving you on 127.0.0.1:8879
+</code></pre></div><p><img src="https://hellowoodes.oss-cn-beijing.aliyuncs.com/picture/helm-app-list.png" alt="helm-app-list.png"></p> <hr> <h3 id="项目地址"><a href="#项目地址" aria-hidden="true" class="header-anchor">#</a> 项目地址</h3> <p><a href="https://github.com/helloworlde/helm-app-rest" target="_blank" rel="noopener noreferrer">https://github.com/helloworlde/helm-app-rest<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p></div> <div class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated: </span> <span class="time">9/9/2019, 8:14:49 AM</span></div></div> <!----> </div> <!----></div></div>
+    <script src="/blog/assets/js/app.c3b8d897.js" defer></script><script src="/blog/assets/js/50.b7711518.js" defer></script>
+  </body>
+</html>

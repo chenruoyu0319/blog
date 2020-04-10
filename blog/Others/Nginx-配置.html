@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Nginx 配置 | HelloWood</title>
+    <meta name="description" content="There is path to everyone">
+    <link rel="icon" href="/blog/favicon.ico">
+    
+    <link rel="preload" href="/blog/assets/css/0.styles.ad3369ca.css" as="style"><link rel="preload" href="/blog/assets/js/app.c3b8d897.js" as="script"><link rel="preload" href="/blog/assets/js/60.2429cfb7.js" as="script"><link rel="prefetch" href="/blog/assets/js/10.da86b7bd.js"><link rel="prefetch" href="/blog/assets/js/100.1fda9c7b.js"><link rel="prefetch" href="/blog/assets/js/101.d6e48f6b.js"><link rel="prefetch" href="/blog/assets/js/102.bba9eb7e.js"><link rel="prefetch" href="/blog/assets/js/103.9130ca26.js"><link rel="prefetch" href="/blog/assets/js/104.17feb6c0.js"><link rel="prefetch" href="/blog/assets/js/105.2d88b9c6.js"><link rel="prefetch" href="/blog/assets/js/106.60aab3d6.js"><link rel="prefetch" href="/blog/assets/js/107.0b445758.js"><link rel="prefetch" href="/blog/assets/js/108.24b24aee.js"><link rel="prefetch" href="/blog/assets/js/109.e2dfc393.js"><link rel="prefetch" href="/blog/assets/js/11.a9db4537.js"><link rel="prefetch" href="/blog/assets/js/110.5e99609b.js"><link rel="prefetch" href="/blog/assets/js/111.1d728c12.js"><link rel="prefetch" href="/blog/assets/js/112.0dc96157.js"><link rel="prefetch" href="/blog/assets/js/113.2dd7f283.js"><link rel="prefetch" href="/blog/assets/js/114.592ea6c3.js"><link rel="prefetch" href="/blog/assets/js/115.02255f30.js"><link rel="prefetch" href="/blog/assets/js/116.ef5309f5.js"><link rel="prefetch" href="/blog/assets/js/117.c34f674b.js"><link rel="prefetch" href="/blog/assets/js/118.54f8bd90.js"><link rel="prefetch" href="/blog/assets/js/119.61245eae.js"><link rel="prefetch" href="/blog/assets/js/12.8583d81f.js"><link rel="prefetch" href="/blog/assets/js/120.a434adb5.js"><link rel="prefetch" href="/blog/assets/js/121.fc914209.js"><link rel="prefetch" href="/blog/assets/js/122.20dc77aa.js"><link rel="prefetch" href="/blog/assets/js/13.9ae3b3e9.js"><link rel="prefetch" href="/blog/assets/js/14.11ff3f38.js"><link rel="prefetch" href="/blog/assets/js/15.688067b9.js"><link rel="prefetch" href="/blog/assets/js/16.427cec0a.js"><link rel="prefetch" href="/blog/assets/js/17.98f70d8f.js"><link rel="prefetch" href="/blog/assets/js/18.b4ab36f9.js"><link rel="prefetch" href="/blog/assets/js/19.7e0b8dc9.js"><link rel="prefetch" href="/blog/assets/js/2.8cfd1be3.js"><link rel="prefetch" href="/blog/assets/js/20.adf7d5c8.js"><link rel="prefetch" href="/blog/assets/js/21.bb9eafed.js"><link rel="prefetch" href="/blog/assets/js/22.5ed2a178.js"><link rel="prefetch" href="/blog/assets/js/23.99d24170.js"><link rel="prefetch" href="/blog/assets/js/24.bc475600.js"><link rel="prefetch" href="/blog/assets/js/25.e457e40c.js"><link rel="prefetch" href="/blog/assets/js/26.b4236411.js"><link rel="prefetch" href="/blog/assets/js/27.cc233ffc.js"><link rel="prefetch" href="/blog/assets/js/28.88e37db5.js"><link rel="prefetch" href="/blog/assets/js/29.d8334253.js"><link rel="prefetch" href="/blog/assets/js/3.85eafc6e.js"><link rel="prefetch" href="/blog/assets/js/30.036a6581.js"><link rel="prefetch" href="/blog/assets/js/31.39636870.js"><link rel="prefetch" href="/blog/assets/js/32.4f1b9fe5.js"><link rel="prefetch" href="/blog/assets/js/33.f5fccb87.js"><link rel="prefetch" href="/blog/assets/js/34.8f223cf7.js"><link rel="prefetch" href="/blog/assets/js/35.2eb95af5.js"><link rel="prefetch" href="/blog/assets/js/36.bb3a4c24.js"><link rel="prefetch" href="/blog/assets/js/37.37386f66.js"><link rel="prefetch" href="/blog/assets/js/38.148c6dd1.js"><link rel="prefetch" href="/blog/assets/js/39.7e86da97.js"><link rel="prefetch" href="/blog/assets/js/4.25bf5105.js"><link rel="prefetch" href="/blog/assets/js/40.f7d3b58a.js"><link rel="prefetch" href="/blog/assets/js/41.410d464b.js"><link rel="prefetch" href="/blog/assets/js/42.3605393d.js"><link rel="prefetch" href="/blog/assets/js/43.5de0724c.js"><link rel="prefetch" href="/blog/assets/js/44.23f62410.js"><link rel="prefetch" href="/blog/assets/js/45.be9ef252.js"><link rel="prefetch" href="/blog/assets/js/46.c12425b6.js"><link rel="prefetch" href="/blog/assets/js/47.ce3ec49d.js"><link rel="prefetch" href="/blog/assets/js/48.e952f7c9.js"><link rel="prefetch" href="/blog/assets/js/49.54ff7f6f.js"><link rel="prefetch" href="/blog/assets/js/5.63c626c0.js"><link rel="prefetch" href="/blog/assets/js/50.b7711518.js"><link rel="prefetch" href="/blog/assets/js/51.03a13657.js"><link rel="prefetch" href="/blog/assets/js/52.3892d45c.js"><link rel="prefetch" href="/blog/assets/js/53.81de0db8.js"><link rel="prefetch" href="/blog/assets/js/54.cd38387d.js"><link rel="prefetch" href="/blog/assets/js/55.8d91faa8.js"><link rel="prefetch" href="/blog/assets/js/56.4eec9a52.js"><link rel="prefetch" href="/blog/assets/js/57.f71bbce3.js"><link rel="prefetch" href="/blog/assets/js/58.95eddb54.js"><link rel="prefetch" href="/blog/assets/js/59.16df2f6b.js"><link rel="prefetch" href="/blog/assets/js/6.3cf64e25.js"><link rel="prefetch" href="/blog/assets/js/61.14655cd6.js"><link rel="prefetch" href="/blog/assets/js/62.9c2b33ad.js"><link rel="prefetch" href="/blog/assets/js/63.2d91c668.js"><link rel="prefetch" href="/blog/assets/js/64.f4834597.js"><link rel="prefetch" href="/blog/assets/js/65.d11a02e4.js"><link rel="prefetch" href="/blog/assets/js/66.4326ba51.js"><link rel="prefetch" href="/blog/assets/js/67.cb1dc555.js"><link rel="prefetch" href="/blog/assets/js/68.a83dc049.js"><link rel="prefetch" href="/blog/assets/js/69.d1f07348.js"><link rel="prefetch" href="/blog/assets/js/7.9cbb0d6f.js"><link rel="prefetch" href="/blog/assets/js/70.f96025df.js"><link rel="prefetch" href="/blog/assets/js/71.af522fcf.js"><link rel="prefetch" href="/blog/assets/js/72.9ec2197b.js"><link rel="prefetch" href="/blog/assets/js/73.95bc1d2c.js"><link rel="prefetch" href="/blog/assets/js/74.8bdf0ff5.js"><link rel="prefetch" href="/blog/assets/js/75.adfb40ef.js"><link rel="prefetch" href="/blog/assets/js/76.1e88405d.js"><link rel="prefetch" href="/blog/assets/js/77.32a459de.js"><link rel="prefetch" href="/blog/assets/js/78.05684469.js"><link rel="prefetch" href="/blog/assets/js/79.6eb82fa7.js"><link rel="prefetch" href="/blog/assets/js/8.a853dfa7.js"><link rel="prefetch" href="/blog/assets/js/80.8d4b06e9.js"><link rel="prefetch" href="/blog/assets/js/81.74e68934.js"><link rel="prefetch" href="/blog/assets/js/82.0497f220.js"><link rel="prefetch" href="/blog/assets/js/83.98a0e98c.js"><link rel="prefetch" href="/blog/assets/js/84.4267a125.js"><link rel="prefetch" href="/blog/assets/js/85.4c9c338e.js"><link rel="prefetch" href="/blog/assets/js/86.7d4985b4.js"><link rel="prefetch" href="/blog/assets/js/87.33c61c72.js"><link rel="prefetch" href="/blog/assets/js/88.49bd3481.js"><link rel="prefetch" href="/blog/assets/js/89.2ceb6118.js"><link rel="prefetch" href="/blog/assets/js/9.b85f95f3.js"><link rel="prefetch" href="/blog/assets/js/90.bfa5d02e.js"><link rel="prefetch" href="/blog/assets/js/91.faa858b0.js"><link rel="prefetch" href="/blog/assets/js/92.5e8f5328.js"><link rel="prefetch" href="/blog/assets/js/93.9100f2a7.js"><link rel="prefetch" href="/blog/assets/js/94.79d7ea18.js"><link rel="prefetch" href="/blog/assets/js/95.60447753.js"><link rel="prefetch" href="/blog/assets/js/96.f0bac547.js"><link rel="prefetch" href="/blog/assets/js/97.fcb5a63e.js"><link rel="prefetch" href="/blog/assets/js/98.fd71af61.js"><link rel="prefetch" href="/blog/assets/js/99.f0ef3ad6.js">
+    <link rel="stylesheet" href="/blog/assets/css/0.styles.ad3369ca.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/blog/" class="home-link router-link-active"><!----> <span class="site-name">HelloWood</span></a> <div class="links" style="max-width:nullpx;"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/blog/blog/" class="nav-link router-link-active">Blog</a></div><div class="nav-item"><a href="/blog/about/" class="nav-link">About</a></div> <a href="https://github.com/helloworlde/" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav></div></header> <div class="sidebar-mask"></div> <div class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/blog/blog/" class="nav-link router-link-active">Blog</a></div><div class="nav-item"><a href="/blog/about/" class="nav-link">About</a></div> <a href="https://github.com/helloworlde/" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav>  <ul class="sidebar-links"><li><div class="sidebar-group first collapsable"><p class="sidebar-heading"><span>Angular</span> <span class="arrow right"></span></p> <!----></div></li><li><div class="sidebar-group collapsable"><p class="sidebar-heading"><span>Docker</span> <span class="arrow right"></span></p> <!----></div></li><li><div class="sidebar-group collapsable"><p class="sidebar-heading"><span>Gauge</span> <span class="arrow right"></span></p> <!----></div></li><li><div class="sidebar-group collapsable"><p class="sidebar-heading"><span>Gradle</span> <span class="arrow right"></span></p> <!----></div></li><li><div class="sidebar-group collapsable"><p class="sidebar-heading"><span>Go</span> <span class="arrow right"></span></p> <!----></div></li><li><div class="sidebar-group collapsable"><p class="sidebar-heading"><span>IDEA</span> <span class="arrow right"></span></p> <!----></div></li><li><div class="sidebar-group collapsable"><p class="sidebar-heading"><span>Java</span> <span class="arrow right"></span></p> <!----></div></li><li><div class="sidebar-group collapsable"><p class="sidebar-heading"><span>Kubernetes</span> <span class="arrow right"></span></p> <!----></div></li><li><div class="sidebar-group collapsable"><p class="sidebar-heading"><span>MQ</span> <span class="arrow right"></span></p> <!----></div></li><li><div class="sidebar-group collapsable"><p class="sidebar-heading"><span>MySQL</span> <span class="arrow right"></span></p> <!----></div></li><li><div class="sidebar-group collapsable"><p class="sidebar-heading open"><span>Others</span> <span class="arrow down"></span></p> <ul class="sidebar-group-items"><li><a href="/blog/blog/Others/Mac-客户端访问-Dropbox.html" class="sidebar-link">Mac 客户端访问 Dropbox</a></li><li><a href="/blog/blog/Others/JRebel-安装激活.html" class="sidebar-link">JRebel 安装激活</a></li><li><a href="/blog/blog/Others/Redis基础知识-数据类型.html" class="sidebar-link">Redis基础知识-数据类型</a></li><li><a href="/blog/blog/Others/Nginx-配置.html" class="active sidebar-link">Nginx 配置</a></li></ul></div></li><li><div class="sidebar-group collapsable"><p class="sidebar-heading"><span>Seata</span> <span class="arrow right"></span></p> <!----></div></li><li><div class="sidebar-group collapsable"><p class="sidebar-heading"><span>Serverless</span> <span class="arrow right"></span></p> <!----></div></li><li><div class="sidebar-group collapsable"><p class="sidebar-heading"><span>SpringBoot</span> <span class="arrow right"></span></p> <!----></div></li><li><div class="sidebar-group collapsable"><p class="sidebar-heading"><span>SpringCloud</span> <span class="arrow right"></span></p> <!----></div></li><li><div class="sidebar-group collapsable"><p class="sidebar-heading"><span>SpringMVC</span> <span class="arrow right"></span></p> <!----></div></li><li><div class="sidebar-group collapsable"><p class="sidebar-heading"><span>Ubuntu</span> <span class="arrow right"></span></p> <!----></div></li><li><div class="sidebar-group collapsable"><p class="sidebar-heading"><span>Web</span> <span class="arrow right"></span></p> <!----></div></li><li><div class="sidebar-group collapsable"><p class="sidebar-heading"><span>Windows</span> <span class="arrow right"></span></p> <!----></div></li><li><div class="sidebar-group collapsable"><p class="sidebar-heading"><span>RaspBerryPi</span> <span class="arrow right"></span></p> <!----></div></li></ul> </div> <div class="page"> <div class="content"><h1 id="nginx-配置"><a href="#nginx-配置" aria-hidden="true" class="header-anchor">#</a> Nginx 配置</h1> <h2 id="_1-基础配置"><a href="#_1-基础配置" aria-hidden="true" class="header-anchor">#</a> 1. 基础配置</h2> <div class="language-conf extra-class"><pre class="language-text"><code>worker_processes  1;
+
+events {
+    worker_connections  1024;
+}
+
+http {
+    include       mime.types;
+    default_type  application/octet-stream;
+
+    sendfile        on;
+
+    keepalive_timeout  65;
+
+    server {
+       listen       80;
+        server_name  project.hellowood.com;
+
+        access_log  logs/project.access.log;
+
+        location / {
+                proxy_pass http://127.0.0.1:8080;
+                proxy_set_header   Host    $host;  
+                proxy_set_header   X-Real-IP   $remote_addr;   
+                proxy_set_header   X-Forwarded-For $proxy_add_x_forwarded_for;
+        }
+
+        error_page   500 502 503 504  /50x.html;
+        location = /50x.html {
+            root   html;
+        }
+    }
+}
+</code></pre></div><blockquote><p>访问<code>project.hellowood.com</code> 实际会访问该 IP 下的8080端口</p></blockquote> <h2 id="_2-不同的-url-访问不同的服务器"><a href="#_2-不同的-url-访问不同的服务器" aria-hidden="true" class="header-anchor">#</a> 2. 不同的 URL 访问不同的服务器</h2> <ul><li>配置 Server 节点</li></ul> <div class="language-conf extra-class"><pre class="language-text"><code>    server {
+       listen       80;
+        server_name  project.hellowood.com;
+
+        access_log  logs/project.access.log;
+
+        location / {
+                proxy_pass http://127.0.0.1:8080;
+                proxy_set_header   Host    $host;  
+                proxy_set_header   X-Real-IP   $remote_addr;   
+                proxy_set_header   X-Forwarded-For $proxy_add_x_forwarded_for;
+        }
+
+        error_page   500 502 503 504  /50x.html;
+        location = /50x.html {
+            root   html;
+        }
+    }
+
+    server {
+       listen       80;
+        server_name  introduce.hellowood.com;
+
+        access_log  logs/introduce.access.log;
+
+        location / {
+                proxy_pass http://127.0.0.1:8081;
+                proxy_set_header   Host    $host;  
+                proxy_set_header   X-Real-IP   $remote_addr;   
+                proxy_set_header   X-Forwarded-For $proxy_add_x_forwarded_for;
+        }
+
+        error_page   500 502 503 504  /50x.html;
+        location = /50x.html {
+            root   html;
+        }
+    }
+
+    server {
+       listen       80;
+        server_name  helloworld.com;
+
+        access_log  logs/helloworld.access.log;
+
+        location / {
+                proxy_pass http://127.0.0.1:8082;
+                proxy_set_header   Host    $host;  
+                proxy_set_header   X-Real-IP   $remote_addr;   
+                proxy_set_header   X-Forwarded-For $proxy_add_x_forwarded_for;
+        }
+
+        error_page   500 502 503 504  /50x.html;
+        location = /50x.html {
+            root   html;
+        }
+    }
+</code></pre></div><blockquote><p>访问<code>project.hellowood.com</code> 实际会访问该 IP 下的8080端口
+访问<code>introduce.hellowood.com</code> 实际会访问该 IP 下的8081端口
+访问<code>helloworld.com</code> 实际会访问该 IP 下的8082端口</p></blockquote> <h2 id="_3-不同的项目路径访问不同的服务器"><a href="#_3-不同的项目路径访问不同的服务器" aria-hidden="true" class="header-anchor">#</a> 3. 不同的项目路径访问不同的服务器</h2> <div class="language-conf extra-class"><pre class="language-text"><code>    server {  
+        listen       80;  
+        server_name  hellowood.com;  
+        location / {  
+            root   html;  
+            index  index.html index.htm;  
+        }  
+        location /helloworld {  
+            proxy_pass http://192.168.101.101:8080/helloworld;  
+            proxy_set_header   Host    $host;  
+            proxy_set_header   X-Real-IP   $remote_addr;   
+            proxy_set_header   X-Forwarded-For $proxy_add_x_forwarded_for;  
+        }  
+        location /hi {  
+            proxy_pass http://192.168.101.101:8080/hi;  
+            proxy_set_header   Host    $host;  
+            proxy_set_header   X-Real-IP   $remote_addr;   
+            proxy_set_header   X-Forwarded-For $proxy_add_x_forwarded_for;  
+        }  
+        location /howareyou {  
+            proxy_pass http://192.168.101.101:8088/howareyou;  
+            proxy_set_header   Host    $host;  
+            proxy_set_header   X-Real-IP   $remote_addr;   
+            proxy_set_header   X-Forwarded-For $proxy_add_x_forwarded_for;  
+        }  
+        location /introduce {  
+            proxy_pass http://10.2.10.11:9999/introduce;  
+            proxy_set_header   Host    $host;  
+            proxy_set_header   X-Real-IP   $remote_addr;   
+            proxy_set_header   X-Forwarded-For $proxy_add_x_forwarded_for;  
+        }  
+
+        location /lalala {  
+            proxy_pass http://www.lalala.com;  
+            proxy_set_header   Host    $host;  
+            proxy_set_header   X-Real-IP   $remote_addr;   
+            proxy_set_header   X-Forwarded-For $proxy_add_x_forwarded_for;  
+        }
+
+        error_page   500 502 503 504  /50x.html;  
+        location = /50x.html {  
+            root   html;  
+        }  
+    }  
+</code></pre></div><ul><li>访问<code>hellowood.com</code> 实际会访问该 IP 下的 Nginx 目录下的静态页面</li> <li>访问<code>hellowood.com/helloworld</code> 实际会访问<code>http://192.168.101.101:8080/helloworld</code></li> <li>访问<code>hellowood.com/hi</code> 实际会访问<code>http://192.168.101.101:8080/hi</code></li> <li>访问<code>hellowood.com/howareyou</code> 实际会访问<code>http://192.168.101.101:8088/howareyou</code></li> <li>访问<code>hellowood.com/introduce</code> 实际会访问<code>http://10.2.10.11:9999/introduce</code></li> <li>访问<code>hellowood.com/lalala</code> 实际会访问<code>http://www.lalala.com</code></li></ul></div> <div class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated: </span> <span class="time">12/29/2018, 6:39:53 PM</span></div></div> <!----> </div> <!----></div></div>
+    <script src="/blog/assets/js/app.c3b8d897.js" defer></script><script src="/blog/assets/js/60.2429cfb7.js" defer></script>
+  </body>
+</html>
